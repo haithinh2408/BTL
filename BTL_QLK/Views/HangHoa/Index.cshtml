@@ -1,0 +1,70 @@
+﻿@model IEnumerable<BTL_QLK.Models.HangHoa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChungLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.XuatXu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgaySX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HanSD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonViTinh)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChungLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.XuatXu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HanSD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonViTinh)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaHang }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaHang }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaHang })
+        </td>
+    </tr>
+}
+
+</table>
